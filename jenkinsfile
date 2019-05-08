@@ -4,5 +4,8 @@ node('java') {
    }
     stage('Build') {
 	sh script: 'mvn package'
-	}
+   }
+    stage('Artifact'){
+    archive 'target/.war'
+    }
 }
