@@ -6,6 +6,6 @@ node('java') {
 	sh script: 'mvn package'
    }
     stage('Artifact'){
-    archive 'target/.war'
+    archive 'target/*.war'
     }
 }
