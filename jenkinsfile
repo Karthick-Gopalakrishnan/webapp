@@ -1,0 +1,8 @@
+node('java') {
+    stage('Git') {
+    git branch: 'Dev', url: 'https://github.com/Karthick-Gopalakrishnan/webapp.git'
+   }
+    stage('Build') {
+	sh script: 'mvn package'
+	}
+}
