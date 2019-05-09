@@ -10,10 +10,8 @@ node('java') {
     }
 
     stage('Deploy'){
-    sh 'mkdir $WORKSPACE/$JOB_NAME'
-    sh 'cp target/*.war /var/lib/jenkins/$JOB_NAME'
-    sh 'cd /var/lib/jenkins'
-    sh 'scp -r $JOB_NAME ansible@172.16.124.6:/home/ansible/'
+    sh 'mkdir Deliverables/$JOB_NAME/$BUILD_NUMBER'
+    sh 'cp target/*.war Deliverables/$JOB_NAME/$BUILD_NUMBER'
     }
 }
 
