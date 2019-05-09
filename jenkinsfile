@@ -7,12 +7,16 @@ node('java') {
    }
     stage('Artifact'){
     archive 'target/*.war'
-     sh 'pwd'
     }
 
-    stage('email'){
-    emailext body: 'sucess ', subject: 'webapp', to: 'g.karthick@outlook.com'
+    stage('Deploy'){
+    sh 'cp target/*.war /var/lib/jenkins/$JOB_NAME'
+    sh 'cd /var/lib/jenkins'
+    sh 'scp -r $JOB_NAME ansible@172.16.124.6:/home/ansible/'
     }
 }
 
+
+     
+     
 
