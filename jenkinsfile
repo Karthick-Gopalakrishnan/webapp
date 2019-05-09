@@ -10,7 +10,7 @@ node('java') {
     }
 
     stage('Deploy'){
-    sh 'mkdir /var/lib/jenkins/Deliverables/$JOB_NAME/$BUILD_NUMBER'
+    sh 'mkdir /var/lib/jenkins/Deliverables/$JOB_NAME/$BUILD_NUMBER/'
     sh 'cp target/*.war /var/lib/jenkins/Deliverables/$JOB_NAME/$BUILD_NUMBER'
     }
 }
