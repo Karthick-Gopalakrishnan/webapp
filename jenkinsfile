@@ -10,8 +10,8 @@ node('java') {
     }
 
     stage('Deploy'){
-    sh 'mkdir -p /var/lib/jenkins/Deliverables/$JOB_NAME/$BUILD_NUMBER/'
-    sh 'cp target/*.war /var/lib/jenkins/Deliverables/$JOB_NAME/$BUILD_NUMBER'
+    sh 'scp *.war ansible@172.16.124.6:/home/ansible/webapp-pipline-Day-DP'
+    build 'webapp-pipline-Day-DP'
     }
 }
 
