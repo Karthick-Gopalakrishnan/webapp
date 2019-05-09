@@ -8,4 +8,10 @@ node('java') {
     stage('Artifact'){
     archive 'target/*.war'
     }
+
+    stage('email'){
+    emailext body: 'sucess ', subject: 'webapp', to: 'g.karthick@outlook.com'
+    }
 }
+
+
